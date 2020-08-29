@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .wrap{
+            display: flex;
+            justify-content: space-around;
+        }
+        .btn{
+            font-size: 44px;
+        }
+    </style>
 </head>
 <body>
     
@@ -11,9 +20,10 @@
     <h1 id="score_id">0</h1>
 
     <canvas width="400" height="400" id="canvas_id"></canvas>
-    <button id="left">左</button>
-    <button id="right">右</button>
-
+    <div class="wrap">
+    <button class="btn" id="left">左</button>
+    <button id="right" class="btn">右</button>
+</div>
 
 
     <script src="main.js"></script>
