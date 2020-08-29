@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font:inherit;
+    vertical-align: baseline;
+}
+html{
+    height: 100%;
+}
+body{
+    line-height: 1;
+    background-image:url("map.png");
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+.rocket{
+    position: absolute;
+    bottom: 0;
+    transition:all 1s 
+}
+.rocket-1{
+    left: 30px;
+}
+.rocket-2{
+    left: 330px;
+}
+.rocket-3{
+    left: 630px;
+}

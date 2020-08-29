@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        input{
+            display: none;
+        }
+        header{
+            background-color: #ccc;
+            height: 50px;
+            width: 100%;
+            position: fixed;
+        }
+        .menu_btn{
+            font-size: 40px;
+            height: 50px;
+            width: 50px;
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            line-height: 50px;
+            text-align: center;
+            background-color: #ccf;
+        }
+        nav{
+            height: calc(100vh - 50px);
+            width: 80%;
+            background-color: #ffc;
+            position: absolute;
+            top: 50px;
+            left: -100%;
+            transition: 0.5s;
+        }
+        nav a{
+            display: block;
+            text-decoration: none;
+            font-size: 20px;
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        #menu_control:checked ~nav{
+            left: 0;
+        }
+        @media screen and (min-width:768px){
+            .menu_btn{
+                display: none;
+            }
+            header{
+                display: flex;
+                justify-content: space-between;
+            }
+            nav{
+                position: relative;
+                left: 0;
+                display: flex;
+                top: 0;
+                height: auto;
+                width: auto;
+                background-color: transparent;
+            }
+            nav a{
+                padding: 0 20px;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                border-bottom: none;
+                line-height: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+        <div class="logo">
+            <a href="#">
+                <img src="https://fakeimg.pl/50x50/ffaaaa/">
+            </a>
+        </div>
+        <input type="checkbox" id="menu_control">
+        <label for="menu_control" class="menu_btn">☰</label>
+        <nav>
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+            <a href="#">link</a>
+        </nav>
+        
+    </header>
+    <div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab blanditiis facilis velit quam esse harum labore quia voluptatem id pariatur magnam consectetur, sunt obcaecati ad quasi repudiandae nihil earum.</p>
+    </div>
+    <div>
+        <p>123456</p>
+        <p>123456</p>
+        <p>123456</p>
+        <p>123456</p>
+        <p>123456</p>
+        <p>123456</p>
+        <p>123456</p>
+        <p>123456</p>
+        <p>123456</p>
+        <p>123456</p>
+        <p>123456</p>
+        <p>123456</p>
+        <p>123456</p>
+        <p>123456</p>
+        <p>123456</p>
+        <p>123456</p>
+    </div>
+</body>
+
+</html>

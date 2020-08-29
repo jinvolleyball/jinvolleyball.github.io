@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDoList</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 5px;
+        list-style: none;
+      }
+      body{
+          background-color: blanchedalmond;
+      }
+      h1 {
+        text-align: left;
+        margin: 20px 0;
+      }
+      .container {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+      }
+      .container img {
+        width: 100%;
+        border-radius: 50%;
+      }
+      li button{
+          margin-right: 10px;
+      }
+      .right {
+        width: 100%;
+        margin-left: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="https://fakeimg.pl/300x300/faa/" alt="" />
+
+      <div class="right">
+        <h1>ToDoList</h1>
+        <input id="input" type="text" placeholder="TypeSomething" />
+        <button id="btn">送出</button>
+        <ul id="result"></ul>
+      </div>
+    </div>
+
+    <script>
+      var btn = document.querySelector("#btn");
+      var result = document.querySelector("#result");
+      var todo = JSON.parse(localStorage.getItem("listData")) || [];
+      btn.addEventListener("click", add);
+      result.addEventListener("click", del);
+
+      update(todo);
+
+      //add (update array,localstorage)
+      function add(e) {
+        e.preventDefault();
+        var input = document.querySelector("#input").value;
+        if (input == "") {
+          alert("輸入為空");
+          return;
+        }
+        input = {
+          content: input,
+        };
+        todo.push(input);
+        update(todo);
+        document.querySelector("#input").value = "";
+        localStorage.setItem("listData",JSON.stringify(todo))
+      }
+      //del
+      function del(e) {
+          e.preventDefault();
+        if (e.target.nodeName != "BUTTON") {
+          return;
+        }
+         var num = e.target.dataset.num;
+        todo.splice(num, 1);
+        localStorage.setItem("listData",JSON.stringify(todo));
+        update(todo);
+      }
+
+      function update(todo) {
+        str = "";
+        for (var i = 0; i < todo.length; i++) {
+          str +=
+            "<li><button data-num=" +
+            i +
+            ">del</button>" +
+            todo[i].content +
+            "</li>";
+        }
+        result.innerHTML = str;
+      }
+    </script>
+  </body>
+</html>
