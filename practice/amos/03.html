@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            background: #003;
+        }
+        .wrap{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .item{
+            width: 350px;
+            margin: 15px;
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            transform: translateY(0);
+            transition: .5s;
+        }
+        .item img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .item .text{
+            padding: 20px;
+            position: relative;
+        }
+        .item .text h2{
+            margin: 10px 0;
+            border-bottom: #000 solid 1px;
+            padding-bottom: 0.3em;
+            font-weight: 900;
+        }
+        .item .text p{
+            font-weight: 300;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .item .text:before{
+            position: absolute;
+            content: "";
+            top: 0;left: 0;
+            height: 0;
+            width: 0;
+            border-top:50px solid transparent;
+            border-left: 175px solid #fff;
+            border-right: 175px solid #fff;
+            transform: translateY(-100%);
+        }
+        .item:hover{
+            transform: translateY(-50px);
+        }
+        .item:hover .text{
+            background: linear-gradient(180deg,#fcc,#cfc);
+        }
+        .item:hover .text:before{
+            border-left: #fcc 175px solid;
+            border-right: #fcc 175px solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="item">
+            <img src="https://picsum.photos/300/300/?random=1">
+            <div class="text">
+                <h2>title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, earum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, itaque.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/300/300/?random=2">
+            <div class="text">
+                <h2>title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, earum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, itaque.</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/300/300/?random=3">
+            <div class="text">
+                <h2>title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, earum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, itaque.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

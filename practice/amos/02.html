@@ -53,10 +53,17 @@
         .item h2::after{
             content: "";
             display: block;
-            width: 100%;
+            width: 0%;
             height: 2px;
             background: #ff0;
             margin: 10px 0;
+            transition: width 1s;
+        }
+        .item:hover h2::after{
+            width: 100%;
+        }
+        .item:hover .item h2::after{
+            width: 100%;
         }
         .item .txt p{
             font-size: 20px;
@@ -67,7 +74,6 @@
 </head>
 
 <body>
-<<<<<<< Updated upstream
     <div class="wrap">
         <div class="item">
             <img src="https://picsum.photos/id/684/500/400" alt="">
@@ -97,10 +103,7 @@
                 <p>友情一下子直播主文檔，正好總經理地方旅。</p>
             </div>
         </div>
-=======
-    <div class="container">
-        <img src="https://picsum.photos/300/300/?random=1">
->>>>>>> Stashed changes
+    
     </div>
 </body>
 
