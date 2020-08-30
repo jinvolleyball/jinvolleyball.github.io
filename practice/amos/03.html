@@ -43,11 +43,16 @@
             border-bottom: #000 solid 1px;
             padding-bottom: 0.3em;
             font-weight: 900;
+            font-size: 44px;
+            transition: .5s;
+
         }
         .item .text p{
             font-weight: 300;
             line-height: 1.6;
             margin-bottom: 10px;
+            font-size: 15px;
+            transition: .5s;
         }
         .item .text:before{
             position: absolute;
@@ -64,11 +69,19 @@
             transform: translateY(-50px);
         }
         .item:hover .text{
-            background: linear-gradient(180deg,#fcc,#cfc);
+            background: linear-gradient(180deg,#ccc,#131);
+            color: #111;
+
         }
         .item:hover .text:before{
-            border-left: #fcc 175px solid;
-            border-right: #fcc 175px solid;
+            border-left: #ccc 175px solid;
+            border-right: #ccc 175px solid;
+        }
+        .item:hover p{
+            color: #fff;
+        }
+        .item:hover h2{
+            color:#fff
         }
     </style>
 </head>
