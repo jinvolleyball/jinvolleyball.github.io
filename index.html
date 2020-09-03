@@ -1,252 +1,296 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>履歷表</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-      }
-      body {
-        background-color: #eee;
-      }
-      header {
-        overflow: hidden;
-        border-bottom: 1px solid #000;
-        position: relative;
-      }
-      header canvas {
-        width: 100%;
-        background-color: #eee;
-        height: 100%;
-        z-index: -1;
-        position: absolute;
-      }
-      .wrap {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 10px 30px;
-        font-size: 60px;
-      }
-      .wrap .pic {
-        height: 300px;
-        width: 300px;
-      }
-      .pic img {
-        height: 100%;
-        width: 100%;
-        vertical-align: middle;
-        border-radius: 50%;
-      }
-      .text ul li {
-        margin: 10px 0;
-      }
-      .text a {
-        color: #000;
-        text-decoration: none;
-      }
-      .text ul li a:hover {
-        color: wheat;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <canvas id="canvas"></canvas>
-      <div class="wrap">
-        <div class="pic">
-          <img src="https://picsum.photos/300/300/?random=1" />
-        </div>
-        <div class="text">
-          <ul>
-            <li>
-              <a href="#"
-                ><i class="fa fa-facebook-square" aria-hidden="true"></i>
-                benson</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fa fa-facebook-square" aria-hidden="true"></i>
-                phone</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fa fa-facebook-square" aria-hidden="true"></i>
-                github</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fa fa-facebook-square" aria-hidden="true"></i>
-                line</a
-              >
-            </li>
-          </ul>
-        </div>
+
+<head>
+  <meta charset="utf-8" />
+  <title>履歷表</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+    integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+
+    body {
+      background-color: #eee;
+      padding-bottom: 100px;
+    }
+/* header */
+    header {
+      overflow: hidden;
+      border-bottom: 1px solid #000;
+      position: relative;
+    }
+
+    header canvas {
+      width: 100%;
+      background:linear-gradient(30deg,rgb(121, 196, 161),rgb(150, 100, 221));
+      height: 100%;
+      z-index: -1;
+      position: absolute;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 30px;
+      font-size: 60px;
+    }
+
+    .wrap .pic {
+      height: 300px;
+      width: 300px;
+    }
+
+    .pic img {
+      height: 100%;
+      width: 100%;
+      vertical-align: middle;
+      border-radius: 50%;
+    }
+
+    .text ul li {
+      margin: 10px 0;
+    }
+
+    .text a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .text ul li a:hover {
+      color: wheat;
+    }
+
+
+    /* main */
+    main{
+      margin:0 auto;
+      height:auto;
+      width: 100%;
+    }
+
+    footer{
+      background: #000;
+      color: #fff;
+      text-align: center;
+      font-size: 20px;
+      padding: 20px 0;
+      width: 100%;
+      bottom: 0;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <canvas id="canvas"></canvas>
+    <div class="wrap">
+      <div class="pic">
+        <img src="https://picsum.photos/300/300/?random=1">
       </div>
-    </header>
+      <div class="text">
+        <ul>
+          <li>
+            <a href="#"><i class="fab fa-facebook    "></i>
+              Boyu</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-phone    "></i>
+              0912345678</a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-github"></i>
+              zxzxcv1123</a>
+          </li>
+          <li>
+            <a href="https://line.me/ti/p/ce4YuyoBDv">
+              <i class="fab fa-line    "></i>
+              tby9j(只有我能點^^)</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
 
-    <!-- 特效-->
-    <script>
-      var canvas = document.getElementById("canvas");
-      var ctx = canvas.getContext("2d");
-      var cw = (canvas.width = window.innerWidth),
-        cx = cw / 2;
-      var ch = (canvas.height = window.innerHeight),
-        cy = ch / 2;
 
-      ctx.fillStyle = "#000";
-      var linesNum = 16;
-      var linesRy = [];
-      var requestId = null;
+  
+  <main>
+    <h1>讓我想想要放啥咪</h1>
+  </main>
 
-      function Line(flag) {
-        this.flag = flag;
-        this.a = {};
-        this.b = {};
-        if (flag == "v") {
-          this.a.y = 0;
-          this.b.y = ch;
-          this.a.x = randomIntFromInterval(0, ch);
-          this.b.x = randomIntFromInterval(0, ch);
-        } else if (flag == "h") {
-          this.a.x = 0;
-          this.b.x = cw;
-          this.a.y = randomIntFromInterval(0, cw);
-          this.b.y = randomIntFromInterval(0, cw);
-        }
-        this.va = randomIntFromInterval(25, 100) / 100;
-        this.vb = randomIntFromInterval(25, 100) / 100;
 
-        this.draw = function () {
-          ctx.strokeStyle = "#ccc";
-          ctx.beginPath();
-          ctx.moveTo(this.a.x, this.a.y);
-          ctx.lineTo(this.b.x, this.b.y);
-          ctx.stroke();
-        };
 
-        this.update = function () {
-          if (this.flag == "v") {
-            this.a.x += this.va;
-            this.b.x += this.vb;
-          } else if (flag == "h") {
-            this.a.y += this.va;
-            this.b.y += this.vb;
-          }
+  
+  <footer>copyright&copy; 2020/09 練習寫網頁</footer>
+  
+  
+  
+  
+  
+  <!-- 特效-->
+  <script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    var cw = (canvas.width = window.innerWidth),
+      cx = cw / 2;
+    var ch = (canvas.height = window.innerHeight),
+      cy = ch / 2;
 
-          this.edges();
-        };
+    ctx.fillStyle = "#000";
+    var linesNum = 16;
+    var linesRy = [];
+    var requestId = null;
 
-        this.edges = function () {
-          if (this.flag == "v") {
-            if (this.a.x < 0 || this.a.x > cw) {
-              this.va *= -1;
-            }
-            if (this.b.x < 0 || this.b.x > cw) {
-              this.vb *= -1;
-            }
-          } else if (flag == "h") {
-            if (this.a.y < 0 || this.a.y > ch) {
-              this.va *= -1;
-            }
-            if (this.b.y < 0 || this.b.y > ch) {
-              this.vb *= -1;
-            }
-          }
-        };
+    function Line(flag) {
+      this.flag = flag;
+      this.a = {};
+      this.b = {};
+      if (flag == "v") {
+        this.a.y = 0;
+        this.b.y = ch;
+        this.a.x = randomIntFromInterval(0, ch);
+        this.b.x = randomIntFromInterval(0, ch);
+      } else if (flag == "h") {
+        this.a.x = 0;
+        this.b.x = cw;
+        this.a.y = randomIntFromInterval(0, cw);
+        this.b.y = randomIntFromInterval(0, cw);
       }
+      this.va = randomIntFromInterval(25, 100) / 100;
+      this.vb = randomIntFromInterval(25, 100) / 100;
 
+      this.draw = function () {
+        ctx.strokeStyle = "#ccc";
+        ctx.beginPath();
+        ctx.moveTo(this.a.x, this.a.y);
+        ctx.lineTo(this.b.x, this.b.y);
+        ctx.stroke();
+      };
+
+      this.update = function () {
+        if (this.flag == "v") {
+          this.a.x += this.va;
+          this.b.x += this.vb;
+        } else if (flag == "h") {
+          this.a.y += this.va;
+          this.b.y += this.vb;
+        }
+
+        this.edges();
+      };
+
+      this.edges = function () {
+        if (this.flag == "v") {
+          if (this.a.x < 0 || this.a.x > cw) {
+            this.va *= -1;
+          }
+          if (this.b.x < 0 || this.b.x > cw) {
+            this.vb *= -1;
+          }
+        } else if (flag == "h") {
+          if (this.a.y < 0 || this.a.y > ch) {
+            this.va *= -1;
+          }
+          if (this.b.y < 0 || this.b.y > ch) {
+            this.vb *= -1;
+          }
+        }
+      };
+    }
+
+    for (var i = 0; i < linesNum; i++) {
+      var flag = i % 2 == 0 ? "h" : "v";
+      var l = new Line(flag);
+      linesRy.push(l);
+    }
+
+    function Draw() {
+      requestId = window.requestAnimationFrame(Draw);
+      ctx.clearRect(0, 0, cw, ch);
+
+      for (var i = 0; i < linesRy.length; i++) {
+        var l = linesRy[i];
+        l.draw();
+        l.update();
+      }
+      for (var i = 0; i < linesRy.length; i++) {
+        var l = linesRy[i];
+        for (var j = i + 1; j < linesRy.length; j++) {
+          var l1 = linesRy[j];
+          Intersect2lines(l, l1);
+        }
+      }
+    }
+
+    function Init() {
+      linesRy.length = 0;
       for (var i = 0; i < linesNum; i++) {
         var flag = i % 2 == 0 ? "h" : "v";
         var l = new Line(flag);
         linesRy.push(l);
       }
 
-      function Draw() {
-        requestId = window.requestAnimationFrame(Draw);
-        ctx.clearRect(0, 0, cw, ch);
-
-        for (var i = 0; i < linesRy.length; i++) {
-          var l = linesRy[i];
-          l.draw();
-          l.update();
-        }
-        for (var i = 0; i < linesRy.length; i++) {
-          var l = linesRy[i];
-          for (var j = i + 1; j < linesRy.length; j++) {
-            var l1 = linesRy[j];
-            Intersect2lines(l, l1);
-          }
-        }
+      if (requestId) {
+        window.cancelAnimationFrame(requestId);
+        requestId = null;
       }
 
-      function Init() {
-        linesRy.length = 0;
-        for (var i = 0; i < linesNum; i++) {
-          var flag = i % 2 == 0 ? "h" : "v";
-          var l = new Line(flag);
-          linesRy.push(l);
-        }
+      (cw = canvas.width = window.innerWidth), (cx = cw / 2);
+      (ch = canvas.height = window.innerHeight), (cy = ch / 2);
 
-        if (requestId) {
-          window.cancelAnimationFrame(requestId);
-          requestId = null;
-        }
+      Draw();
+    }
 
-        (cw = canvas.width = window.innerWidth), (cx = cw / 2);
-        (ch = canvas.height = window.innerHeight), (cy = ch / 2);
+    setTimeout(function () {
+      Init();
 
-        Draw();
+      addEventListener("resize", Init, false);
+    }, 15);
+
+    function Intersect2lines(l1, l2) {
+      var p1 = l1.a,
+        p2 = l1.b,
+        p3 = l2.a,
+        p4 = l2.b;
+      var denominator =
+        (p4.y - p3.y) * (p2.x - p1.x) - (p4.x - p3.x) * (p2.y - p1.y);
+      var ua =
+        ((p4.x - p3.x) * (p1.y - p3.y) - (p4.y - p3.y) * (p1.x - p3.x)) /
+        denominator;
+      var ub =
+        ((p2.x - p1.x) * (p1.y - p3.y) - (p2.y - p1.y) * (p1.x - p3.x)) /
+        denominator;
+      var x = p1.x + ua * (p2.x - p1.x);
+      var y = p1.y + ua * (p2.y - p1.y);
+      if (ua > 0 && ub > 0) {
+        markPoint({
+          x: x,
+          y: y,
+        });
       }
+    }
 
-      setTimeout(function () {
-        Init();
+    function markPoint(p) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 2, 0, 2 * Math.PI);
+      ctx.fill();
+    }
 
-        addEventListener("resize", Init, false);
-      }, 15);
+    function randomIntFromInterval(mn, mx) {
+      return ~~(Math.random() * (mx - mn + 1) + mn);
+    }
+  </script>
 
-      function Intersect2lines(l1, l2) {
-        var p1 = l1.a,
-          p2 = l1.b,
-          p3 = l2.a,
-          p4 = l2.b;
-        var denominator =
-          (p4.y - p3.y) * (p2.x - p1.x) - (p4.x - p3.x) * (p2.y - p1.y);
-        var ua =
-          ((p4.x - p3.x) * (p1.y - p3.y) - (p4.y - p3.y) * (p1.x - p3.x)) /
-          denominator;
-        var ub =
-          ((p2.x - p1.x) * (p1.y - p3.y) - (p2.y - p1.y) * (p1.x - p3.x)) /
-          denominator;
-        var x = p1.x + ua * (p2.x - p1.x);
-        var y = p1.y + ua * (p2.y - p1.y);
-        if (ua > 0 && ub > 0) {
-          markPoint({
-            x: x,
-            y: y,
-          });
-        }
-      }
+</body>
 
-      function markPoint(p) {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, 2, 0, 2 * Math.PI);
-        ctx.fill();
-      }
-
-      function randomIntFromInterval(mn, mx) {
-        return ~~(Math.random() * (mx - mn + 1) + mn);
-      }
-    </script>
-  </body>
 </html>
