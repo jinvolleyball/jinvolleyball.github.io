@@ -27,7 +27,12 @@
       border-bottom: 1px solid #000;
       position: relative;
       width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+    
 
     /*header canvas {
       width: 100%;
@@ -38,12 +43,27 @@
     }*/
 
     .wrap {
+      width: 90%;
+      border:10px solid rgb(44, 125, 172);
       display: flex;
       justify-content: space-around;
       align-items: center;
       padding: 10px;
       font-size: 60px;
       flex-wrap: wrap;
+      position: relative;
+      box-sizing: border-box;
+    }
+    .wrap::before{
+      content: "";
+      width: 100%;
+      position: absolute;
+      height: 30px;
+      background: rgb(44, 125, 172);
+      bottom: 100%;
+      border: rgb(44, 125, 172) solid 10px;
+      box-sizing: content-box;
+      border-radius: 30px 30px 0 0 ;
     }
 
     .wrap .pic {
@@ -75,6 +95,24 @@
       color: #88f;
     }
 
+    header .fa-angle-down{
+      position: absolute;
+      bottom: 100px;
+      left: 50%;
+      font-size: 100px;
+      color: #ccc;
+      animation: goskill 1s infinite linear;
+    }
+    @keyframes goskill{
+      from{
+        transform: translateY(-20%);
+      }
+      to{
+        transform:translateY(0) ;
+      }
+    }
+
+
 
     /* main */
     main {
@@ -84,17 +122,21 @@
     /* skill */
     .skill-wrap {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       flex-direction: column;
       background: #333;
       padding: 20px 0;
+      height: 100vh;
 
     }
 
     .skill-wrap h1 {
       color: #fff;
       font-size: 50px;
+      margin-bottom: 50px;
+      padding-top: 50px;
+      
     }
 
     .skill-wrap h2 {
@@ -103,7 +145,7 @@
     }
 
     .skill-wrap .item {
-      margin: 5px;
+      margin: 20px 0;
       width: 80%;
     }
 
@@ -134,6 +176,10 @@
       border-radius: 30px;
       margin: 20px auto;
       padding: 10px;
+    }
+    .item:hover{
+      background: #333;
+      color: #fff;
     }
 
     .experience .item h2 {
@@ -212,13 +258,14 @@
         </ul>
       </div>
     </div>
+    <a href="#skill"><i class="fas fa-angle-down"></i></a>
   </header>
 
 
 
   <main>
     <div class="skill-wrap">
-      <h1>skill</h1>
+      <h1 id="skill">skill</h1>
       <div class="item">
         <h2>Python數據分析</h2>
         <div class="progress">
@@ -292,7 +339,7 @@
 
 
 
-  <footer>copyright&copy; 2020/09 練習寫網頁</footer>
+  <footer>copyright&copy; 2020/09 簡易履歷</footer>
 
 
 
