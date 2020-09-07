@@ -110,25 +110,61 @@
     /* 工作經驗 */
     .experience {
       padding: 20px;
-      width: 90%;
+      width: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      left: 0;
+      right:0;
+      margin: auto;
     }
 
     .experience h1 {
       text-align: center;
+      width: 100%;
+      margin-bottom: 20px;
     }
 
-    .experience .work {}
+    .experience .item {
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+      left: 0;
+      right: 0;
+      border: 1px solid #000;
+      border-radius: 30px;
+      margin: 20px auto;
+      padding: 10px;
+    }
 
-    .experience .work h2 {}
+    .experience .item h2 {
+      font-weight: 600;
+      text-align: center;
+    }
 
-    .exerience .work .text {}
+    .exerience .item .text {}
 
-    .exerience .work .text p {}
+    .exerience .item .text p {}
 
-    .exerience .work .text ul {}
+    .experience .item .text ul {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .experience .item .text ul li{
+      position: relative;
+      margin: 0 10px;
+    }
+    .experience .item .text ul li::before{
+      content: "";
+      height: 15px;
+      width: 15px;
+      position: absolute;
+      background:url("img/ball.png") center center/cover;
+      
+      left: -15px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+    }
 
     /* footer */
 
@@ -228,18 +264,18 @@
     </div>
     <div class="experience">
       <h1>工作經驗</h1>
-      <div class="work">
+      <div class="item">
         <h2>摯盈數位</h2>
         <div class="text">
           <p class="content">使用selenium爬蟲之後python進行數據工程，提供可視化圖形，幫助公司進行重要決策。</p>
           <ul>
-            <li>python</li>
+            <li>Python</li>
             <li>selenium</li>
           </ul>
         </div>
 
       </div>
-      <div class="work">
+      <div class="item">
         <h2>美佳數位</h2>
         <div class="text">
           <p class="content">在職期間工作為查詢sql還有log檢查網路波動造成的錯誤，解決客戶問題。</p>
