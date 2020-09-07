@@ -79,16 +79,21 @@
     /* main */
     main {
       width: 100%;
-      background: #333;
-      padding: 20px 0;
     }
 
-
+    /* skill */
     .skill-wrap {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      background: #333;
+      padding: 20px 0;
+
+    }
+    .skill-wrap h1{
+      color: #fff;
+      font-size: 50px;
     }
 
     .skill-wrap h2 {
@@ -101,8 +106,13 @@
       width: 80%;
     }
 
-    .skill-wrap .item .progress {}
-
+    /* 工作經驗 */
+    .experience{}
+    .experience .work{}
+    .experience .work h2{}
+    .exerience .work .text{}
+    .exerience .work .text p{}
+    .exerience .work .text ul{}
     /* footer */
 
     footer {
@@ -155,6 +165,7 @@
 
   <main>
     <div class="skill-wrap">
+      <h1>skill</h1>
       <div class="item">
         <h2>Python數據分析</h2>
         <div class="progress">
@@ -199,7 +210,28 @@
       </div>
     </div>
     <div class="experience">
-      <div class="item"></div>
+      <div class="work">
+        <h2>摯盈數位</h2>
+        <div class="text">
+          <p class="content">使用selenium爬蟲之後python進行數據工程，提供可視化圖形，幫助公司進行重要決策。</p>
+          <ul>
+            <li>python</li>
+            <li>selenium</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="work">
+        <h2>美佳數位</h2>
+        <div class="text">
+          <p class="content">在職期間工作為查詢sql還有log檢查網路波動造成的錯誤，解決客戶問題。</p>
+          <ul>
+            <li>SQL</li>
+            <li>Linux</li>
+          </ul>
+        </div>
+
+      </div>
     </div>
   </main>
 
