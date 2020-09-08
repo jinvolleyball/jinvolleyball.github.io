@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字排版</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .container1 {
+            position: relative;
+            width: 90%;
+            margin: 20px auto;
+        }
+
+        .container1 h1 {
+            width: 200px;
+            box-sizing: border-box;
+            padding: 15px;
+            position: absolute;
+            background: #eee;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            right: 0;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container1 .text {
+            column-gap: 230px;
+            column-count: 2;
+            line-height: 1.6;
+
+        }
+
+
+        .container2 {
+            margin: 20px auto;
+            width: 90%;
+            display: flex;
+
+        }
+
+        .container2 h1 {
+            order: 1;
+            width: 300px;
+            color: #888;
+            font-size: 70px;
+            position: relative;
+        }
+        .container2 h1::before{
+            height: 200px;
+            width: 200px;
+            content: "";
+            box-sizing: border-box;
+            border:10px solid #ccc;
+            position: absolute;
+            top: 10%;
+            z-index: -1;
+        }
+
+
+        .container2 .text {
+            width: 600px;
+            column-count: 2;
+            padding: 20px;
+        }
+        .container2 .text p{
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="container1">
+            <h1>在中間</h1>
+            <div class="text">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora eveniet autem sint saepe molestias
+                    asperiores culpa id laborum excepturi facere? Asperiores optio iusto rem enim, nemo suscipit
+                    mollitia accusamus necessitatibus.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum hic similique quibusdam eius sunt,
+                    dolores eos laborum amet nesciunt quisquam enim odit dolorem tenetur labore suscipit harum officia
+                    quam! Quod.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum hic similique quibusdam eius sunt,
+                    dolores eos laborum amet nesciunt quisquam enim odit dolorem tenetur labore suscipit harum officia
+                    quam! Quod.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="wrap">
+        <div class="container2">
+            <h1>文繞圖排版</h1>
+            <div class="text">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora eveniet autem sint saepe molestias
+                    asperiores culpa id laborum excepturi facere? Asperiores optio iusto rem enim, nemo suscipit
+                    mollitia accusamus necessitatibus.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum hic similique quibusdam eius sunt,
+                    dolores eos laborum amet nesciunt quisquam enim odit dolorem tenetur labore suscipit harum officia
+                    quam! Quod.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum hic similique quibusdam eius sunt,
+                    dolores eos laborum amet nesciunt quisquam enim odit dolorem tenetur labore suscipit harum officia
+                    quam! Quod.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
