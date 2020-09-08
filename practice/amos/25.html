@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* 3 */
+        .container1 {
+            width: 90%;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            box-shadow: 0 0 20px #ccc;
+            justify-content: flex-end;
+
+        }
+
+        .container1 h1 {
+            position: absolute;
+            width: 100%;
+            color: #fff;
+            z-index: -1;
+            font-size: 100px;
+            left: 30px;
+            opacity: 0.5;
+            text-shadow: 5px 5px 0 #ccc;
+
+        }
+
+        .container1 .text {
+            width: 50%;
+            column-count: 2;
+            column-gap: 30px;
+            padding: 15px;
+            font-weight: 300;
+        }
+
+
+        /* 2 */
+        .container2 {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background: #000;
+            height: 100vh;
+        }
+
+        .container2 h1 {
+            color: red;
+            text-align: center;
+            font-size: 60px;
+            margin: 20px 0;
+            display: flex;
+            /* position: relative; */
+            /* border-bottom: 1px solid #ff0000; */
+        }
+
+        .container2 h1::before,
+        .container2 h1::after {
+            content: "";
+            height: 2px;
+            display: block;
+            flex-grow: 1;
+            /* position: absolute; */
+            /* bottom: 0; */
+            /* left: 50%; */
+            /* transform: translateX(-50%); */
+            margin: auto;
+            background: #f00;
+
+        }
+
+        .container2 h1::before {
+            margin-right: .5em;
+        }
+
+        .container2 h1::after {
+            margin-left: .5em;
+        }
+
+        .container2 .text {
+            color: #fff;
+            padding:15px;
+            text-align: center;
+            position: relative;
+        }
+
+        .container2 .text p {
+            margin-bottom: 10px;
+        }
+
+        .container2 .text::before,
+        .container2 .text::after {
+            content: "";
+            height: 50px;
+            width: 50px;
+            position: absolute
+        }
+        .container2 .text::after{
+            top: 0;
+            left:0;
+            border-top: 3px solid #fff;
+            border-left: 3px solid #fff;
+        }
+        .container2 .text::before{
+            bottom: 0;
+            right:0;
+            border-bottom: 3px solid #fff;
+            border-right: 3px solid #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="container1">
+            <h1>XVIDEOS</h1>
+            <div class="text">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora eveniet autem sint saepe molestias
+                    asperiores culpa id laborum excepturi facere? Asperiores optio iusto rem enim, nemo suscipit
+                    mollitia accusamus necessitatibus.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum hic similique quibusdam eius sunt,
+                    dolores eos laborum amet nesciunt quisquam enim odit dolorem tenetur labore suscipit harum officia
+                    quam! Quod.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum hic similique quibusdam eius sunt,
+                    dolores eos laborum amet nesciunt quisquam enim odit dolorem tenetur labore suscipit harum officia
+                    quam! Quod.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <div class="container2">
+            <h1>XVIDEOS</h1>
+            <div class="text">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora eveniet autem sint saepe molestias
+                    asperiores culpa id laborum excepturi facere? Asperiores optio iusto rem enim, nemo suscipit
+                    mollitia accusamus necessitatibus.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum hic similique quibusdam eius sunt,
+                    dolores eos laborum amet nesciunt quisquam enim odit dolorem tenetur labore suscipit harum officia
+                    quam! Quod.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum hic similique quibusdam eius sunt,
+                    dolores eos laborum amet nesciunt quisquam enim odit dolorem tenetur labore suscipit harum officia
+                    quam! Quod.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
