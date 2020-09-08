@@ -10,6 +10,8 @@
             padding: 0;
             list-style: none;
         }
+
+        /* 1 */
         .container1{
             width: 90%;
             margin:100px auto;
@@ -53,7 +55,7 @@
             padding-right: 10px;
         }
         
-
+        /* 2 */
         .container2{
             width: 90%;
             margin:100px auto;
@@ -61,12 +63,47 @@
         }
         .container2 h1{
             width: 300px;
-            transform: rotate(90deg);
+            transform: rotate(90deg) translateX(100%);
+            color: #888;
+            transform-origin: right top;
+            box-sizing: border-box;
+            font-size: 44px;
         }
         .container2 .text{
             column-count: 2;
-            column-gap: 10px;
-            width: 600px;
+            column-gap: 30px;
+            padding: 15px;
+            box-shadow: 0 0 20px #ccc;
+        }
+
+        /* 3 */
+        .container3{
+            width: 90%;
+            margin:100px auto;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            box-shadow: 0 0 20px #ccc;
+            justify-content: flex-end;
+            
+        }
+        .container3 h1{
+            position: absolute;
+            width: 100%;
+            color: #ccc;
+            z-index: -1;
+            font-size: 100px;
+            top: -30px;
+            left: 30px;
+            opacity: 0.5;
+
+        }
+        .container3 .text{
+            width: 50%;
+            column-count: 2;
+            column-gap: 30px;
+            padding: 15px;
+            font-weight: 300;
         }
     </style>
 </head>
@@ -91,7 +128,25 @@
 
     <div class="wrap">
         <div class="container2">
-            <h1>gogo gogo</h1>
+            <h1>GOGO TURTLE</h1>
+            <div class="text">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora eveniet autem sint saepe molestias
+                    asperiores culpa id laborum excepturi facere? Asperiores optio iusto rem enim, nemo suscipit
+                    mollitia accusamus necessitatibus.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum hic similique quibusdam eius sunt,
+                    dolores eos laborum amet nesciunt quisquam enim odit dolorem tenetur labore suscipit harum officia
+                    quam! Quod.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum hic similique quibusdam eius sunt,
+                    dolores eos laborum amet nesciunt quisquam enim odit dolorem tenetur labore suscipit harum officia
+                    quam! Quod.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="wrap">
+        <div class="container3">
+            <h1>GOGO TURTLE</h1>
             <div class="text">
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora eveniet autem sint saepe molestias
                     asperiores culpa id laborum excepturi facere? Asperiores optio iusto rem enim, nemo suscipit
