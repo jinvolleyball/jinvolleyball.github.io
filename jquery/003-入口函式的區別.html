@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- 原生jquery -->
+    <script>
+        //通過原生的JS入口函示可以拿到DOM元素
+        window.onload=function(ev){
+            var img =document.getElementsByTagName("img")[0];
+            console.log(img)
+        var width =window.getComputedStyle(img).width
+            console.log("onload的寬"+width)
+        }
+    </script>
+
+    <!-- jquery -->
+    <script src="jquery.js"></script>
+    <script>
+        $("document").ready(function(ev){
+            
+            var $img =$("img")[0];
+            console.log($img);
+            console.log("ready的寬"+$img.width)
+        })
+    </script>
+</head>
+<body>
+    <img src="https://picsum.photos/300/300/?random=1">
+</body>
+</html>

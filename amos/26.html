@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拼板</title>
+    <style>
+        @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+
+        html {
+            padding-top: 70px;
+        }
+        body{
+            background: #eee;
+        }
+
+        /* main-header */
+
+        .main-header {
+            position: fixed;
+            width: 100%;
+            background-color: #000;
+            top: 0;
+        }
+
+        .main-header .container {
+            display: flex;
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+            padding: 10px;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .main-header .container .logo {
+            width: 50px;
+            height: 50px;
+        }
+
+        .main-header .container .logo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+
+        .main-header .container .main-nav {
+            margin: auto;
+        }
+
+        .main-header .container .main-nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 1em;
+            position: relative;
+            font-size: 24px;
+            transform: translateY(0);
+            transition: .3s;
+            display: inline-block;
+        }
+
+        .main-header .container .main-nav a:hover {
+            transform: translateY(-10px);
+        }
+
+        .main-header .container .main-nav a:after {
+            content: "";
+            border-bottom: 1px solid #fff;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            right: 50%;
+            bottom: -5px;
+            transition: .5s;
+        }
+
+        .main-header .container .main-nav a:hover:after {
+            left: 0;
+            right: 0;
+        }
+
+        .main-header .container .header-search {
+            display: flex;
+        }
+
+        .main-header .container .header-search button,
+        .main-header .container .header-search input {
+            border: none;
+            padding: 5px 10px;
+            background: #fff;
+            color: #000;
+
+        }
+
+        .main-header .container .header-search button {
+            border-radius: 0 200px 200px 0
+        }
+
+        .main-header .container .header-search input {
+            border-radius: 200px 0 0 200px;
+        }
+
+        .main-header .container .header-search input,
+        .main-header .container .header-search button:focus {
+            outline: none;
+        }
+
+
+
+        /* banner */
+
+        .banner {
+            height: 400px;
+            width: 100%;
+            background: linear-gradient(115deg, #faa 50%, transparent 50%) center center /100% 100%,
+                url("https://picsum.photos/600/300/?random=2") right center/auto 100%;
+        }
+
+        .banner .container {
+            width: 50%;
+            height: 100%;
+            top: 0;
+            bottom: 0;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .banner .container .text {
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .banner .container .text h1 {
+            border-bottom: 1px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            font-size: 40px;
+        }
+
+        .banner .container .text h1 small {
+            display: block;
+
+        }
+
+        .banner .container .text p {
+            font-weight: 500;
+            padding-right: 30px;
+        }
+
+
+
+
+
+        /* text */
+        .container2 {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container2 h1 {
+            color: #000;
+            text-align: center;
+            font-size: 60px;
+            margin: 20px 0;
+            display: flex;
+            /* position: relative; */
+            /* border-bottom: 1px solid #ff0000; */
+        }
+
+        .container2 h1::before,
+        .container2 h1::after {
+            content: "";
+            height: 2px;
+            display: block;
+            flex-grow: 1;
+            /* position: absolute; */
+            /* bottom: 0; */
+            /* left: 50%; */
+            /* transform: translateX(-50%); */
+            margin: auto;
+            background: #888;
+
+        }
+
+        .container2 h1::before {
+            margin-right: .5em;
+        }
+
+        .container2 h1::after {
+            margin-left: .5em;
+        }
+
+        .container2 .text {
+            color: #000;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+        }
+
+        .container2 .text p {
+            margin-bottom: 10px;
+        }
+
+
+
+
+
+        /* fish */
+        .fish {
+            margin: 100px auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .fish .item {
+            width: 300px;
+            margin: 0 10px;
+            text-align: center;
+            background: #fff;
+            border: 10px solid #faa;
+            border-radius: 20px;
+        }
+
+        .fish .item h3 {
+            color: #fcc;
+            font-size: 30px;
+        }
+
+        .fish .item p {
+            color: #ccc;
+            padding: 0 0 10px 0;
+        }
+
+        .fish .icon {
+            width: 150px;
+            height: 150px;
+            background: #fff;
+            margin: -75px auto 0;
+            font-size: 90px;
+            line-height: 150px;
+            border-radius: 50%;
+            color: #fcc;
+            position: relative;
+        }
+
+        .fish .icon:before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            border-top: 10px solid #faa;
+            border-right: 10px solid #faa;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid transparent;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transform: rotate(-45deg);
+        }
+
+        .fish .item:hover .fa {
+            animation: ss 0.5s linear infinite alternate;
+        }
+
+        @keyframes ss {
+            0% {
+                transform: rotate(10deg);
+            }
+
+            100% {
+                transform: rotate(-10deg);
+            }
+        }
+
+
+        /* student */
+
+        .student {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .student .container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .student .item {
+            width: 400px;
+            margin: 15px;
+            display: flex;
+            background: #fff;
+            border: 1px solid #888;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-sizing: border-box;
+        }
+
+        .student .pic {
+            width: 50%;
+        }
+
+        .student .pic img {
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+            object-fit: cover;
+        }
+
+        .student .text {
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+        }
+
+        .student .text h2 {
+            font-weight: 700;
+            margin-bottom: .4em;
+        }
+
+        .student .text p {
+            font-weight: 300;
+        }
+
+        .student .text .btn {
+            line-height: 1.5em;
+            border: 1px solid #ccc;
+            padding: 0 1em;
+            align-self: flex-end;
+            text-decoration: none;
+            border-radius: 200px;
+            margin-top: auto;
+            color: #aaa;
+        }
+
+        .student .item .btn:hover {
+            background: #ccc;
+            color: #fff;
+        }
+
+
+        /* pic */
+        .common {
+            width: 100%;
+            overflow: hidden;
+            padding: 0 0 50px;
+        }
+
+        .common>:first-child {
+            width: 50%;
+        }
+
+        .common>:not(:first-child) {
+            width: 25%;
+        }
+
+        .common .item {
+            float: left;
+            position: relative;
+        }
+
+        .common .item img {
+            vertical-align: middle;
+            width: 100%;
+            height: 100%;
+        }
+
+        .common .item .text {
+            position: absolute;
+            top: 0;
+            color: #ffffff;
+            width: 100%;
+            padding: 15px;
+            box-sizing: border-box;
+            background-color: rgba(0, 0, 0, .6);
+            height: 100%;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            display: flex;
+            opacity: 0;
+            transition: .5s;
+            transform: scale(0);
+        }
+
+        .common .item:hover .text {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .common .item h3 {
+            margin-bottom: .4em;
+        }
+
+        .common .item p {
+            font-weight: 100;
+            line-height: 1.6;
+        }
+
+
+
+
+        /* footer */
+        .main-footer {
+        padding:30px 0 0;
+        background: linear-gradient(-20deg, #3f5494, #08c7a5);
+      }
+      .main-footer .container {
+        display: flex;
+        margin: auto;
+        width: 100%;
+      }
+
+      .footer-item {
+        width: 0;
+        flex-grow: 1;
+        margin: 0 20px;
+      }
+      .footer-item h4{
+          font-size: 24px;
+          border-bottom:1px dotted #fff;
+          color: #fff;
+          margin-bottom: .5em;
+          padding-bottom: .5em;
+      }
+      .footer-item nav a:hover{
+          color: #fa0;
+      }
+      .footer-item nav{
+          display: flex;
+          flex-direction: column;
+      }
+      .footer-item nav a{
+          color: #fff;
+          text-decoration: none;
+          line-height: 1.4;
+          padding: 10px 0;
+      }
+
+      /* 訂閱 */
+      .footer-sub{
+          display: flex;
+          flex-direction: column;
+          
+      }
+      .footer-sub form{
+        display: flex;
+        width: 100%;
+        margin: auto 0;
+
+      }
+      .footer-sub form input{
+          border: none;
+          padding: 5px 10px;
+      }
+      .footer-item input[type="text"]{
+        width: 0;
+        flex-grow: 1;
+      }
+      .footer-item input[type="submit"]{
+        background-color:#3e5293;
+        color:#70f6df;
+
+
+      }
+      .copyright {
+        text-align: center;
+        padding: 10px 0;
+        background: #3e5293;
+        width: 100%;
+        color: #70f6df;
+      }
+    </style>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+    <!-- main-header -->
+    <div class="main-header">
+        <div class="container">
+            <a class="logo" href="#">
+                <img src="https://picsum.photos/300/300/?random=1" />
+            </a>
+            <nav class="main-nav">
+                <a href="#me">me</a>
+                <a href="#you">you</a>
+                <a href="#">link</a>
+                <a href="#">link</a>
+            </nav>
+            <form action="" class="header-search">
+                <input type="search" />
+                <button><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- banner -->
+    <div class="banner">
+        <div class="container">
+            <div class="text">
+                <h1>
+                    安安你好
+                    <small>
+                        顆顆你好壓
+                    </small>
+                </h1>
+
+                <h2>圖文滿版</h2>
+                <p>設計出不用br的滿版區塊</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- fish -->
+    <div class="section-group">
+        <div class="wrap">
+            <div class="container2">
+                <h1>XVIDEOS</h1>
+                <div class="text">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora eveniet autem sint saepe molestias
+                        asperiores culpa id laborum excepturi facere? Asperiores optio iusto rem enim, nemo suscipit
+                        mollitia accusamus necessitatibus.</p>
+                </div>
+            </div>
+        </div>
+        <div class="fish">
+            <div class="item">
+                <div class="icon">
+                    <i class="fa fa-gavel" aria-hidden="true"></i>
+                </div>
+                <div class="text">
+                    <h3>title</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit,
+                        iure?
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="icon">
+                    <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+                </div>
+                <div class="text">
+                    <h3>title</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit,
+                        iure?
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="icon">
+                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                </div>
+                <div class="text">
+                    <h3>title</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit,
+                        iure?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- student -->
+    <div class="section-group">
+        <div class="wrap">
+            <div class="container2">
+                <h1>XVIDEOS</h1>
+                <div class="text">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora eveniet autem sint saepe molestias
+                        asperiores culpa id laborum excepturi facere? Asperiores optio iusto rem enim, nemo suscipit
+                        mollitia accusamus necessitatibus.</p>
+                </div>
+            </div>
+        </div>
+        <div class="student">
+            <div class="container">
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/400/400/?random=1">
+                    </div>
+                    <div class="text">
+                        <h2>title</h2>
+                        <p>照片加盟但在全文節省社區至少有的你可以競爭力目前友情連結聽。</p>
+                        <a href="#" class="btn">more</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/400/400/?random=2">
+                    </div>
+                    <div class="text">
+                        <h2>title</h2>
+                        <p>本網站體育家人是怎麼軍事圖書館關閉它是，富岡為您，過了輕易。</p>
+                        <a href="#" class="btn">more</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/400/400/?random=3">
+                    </div>
+                    <div class="text">
+                        <h2>title</h2>
+                        <p>用途勝利準備寬頻天地，首次清楚給予記憶電力網絡後面，群眾消。</p>
+                        <a href="#" class="btn">more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <!-- pic -->
+    <div class="section-group">
+        <div class="wrap">
+            <div class="container2">
+                <h1>XVIDEOS</h1>
+                <div class="text">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora eveniet autem sint saepe molestias
+                        asperiores culpa id laborum excepturi facere? Asperiores optio iusto rem enim, nemo suscipit
+                        mollitia accusamus necessitatibus.</p>
+                </div>
+            </div>
+        </div>
+        <div class="common">
+            <div class="item">
+                <img src="https://picsum.photos/300/300/?random=1">
+                <div class="text">
+                    <h3>title</h3>
+                    <p>文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/300/300/?random=2">
+                <div class="text">
+                    <h3>title</h3>
+                    <p>文字文字字文字文字文字文字</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/300/300/?random=3">
+                <div class="text">
+                    <h3>title</h3>
+                    <p>文字文字字文字文字文字文字</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/300/300/?random=4">
+                <div class="text">
+                    <h3>title</h3>
+                    <p>文字文字字文字文字文字文字</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/300/300/?random=5">
+                <div class="text">
+                    <h3>title</h3>
+                    <p>文字文字字文字文字文字文字</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- footer -->
+    <footer class="main-footer">
+        <div class="container">
+          <div class="footer-item">
+            <h4>關於</h4>
+            <nav>
+              <a href="#"><i class="fa fa-angle-right"></i>test</a>
+              <a href="#"><i class="fa fa-angle-right"></i>test</a>
+              <a href="#"><i class="fa fa-angle-right"></i>test</a>
+              <a href="#"><i class="fa fa-angle-right"></i>test</a>
+            </nav>
+          </div>
+          <div class="footer-item">
+            <h4>聯絡方式</h4>
+            <nav>
+              <a href="#"><i class="fa fa-angle-right"></i>test</a>
+              <a href="#"><i class="fa fa-angle-right"></i>test</a>
+              <a href="#"><i class="fa fa-angle-right"></i>test</a>
+              <a href="#"><i class="fa fa-angle-right"></i>test</a>
+            </nav>
+          </div>
+          <div class="footer-item">
+            <h4>小姐</h4>
+            <nav>
+              <a href="#"><i class="fa fa-angle-right"></i>test</a>
+              <a href="#"><i class="fa fa-angle-right"></i>test</a>
+              <a href="#"><i class="fa fa-angle-right"></i>test</a>
+              <a href="#"><i class="fa fa-angle-right"></i>test</a>
+            </nav>
+          </div>
+          <div class="footer-item footer-sub">
+            <h4>訂閱</h4>
+            <form action="">
+                <input type="text">
+                <input type="submit" value="訂閱">
+            </form>
+          </div>
+        </div>
+        <div class="copyright">copyright &copy; 2020/09/01 學習切版</div>
+      </footer>
+</body>
+
+</html>

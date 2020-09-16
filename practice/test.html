@@ -1,39 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>&lt;title&gt; element</title>
+    <script src="../jquery.js"></script>
     <style>
-        .wrap{
-            overflow: scroll;
-            height: 400px;
-            width: 200px;
-            flex-wrap: nowrap;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .item{
-            height: 150px;
-            width: 100px;
-            background: #ccc;
-            margin: 10px;
-
-        }
-        .item1{
-            align-self: flex-start;
-        }
+      .orange{
+        color: orange;
+      }
     </style>
-</head>
-<body>
-<div class="wrap">
-    <div class="item item1">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
-    <div class="item">4</div>
-   
-</div>
-</div>
-</body>
+  </head>
+  <body>
+   <h1>hit me</h1>
+   <p>test</p>
+
+
+
+   <script>
+     $("h1").click(function(e){
+       $("p").addClass("orange")
+     })
+   </script>
 </html>
