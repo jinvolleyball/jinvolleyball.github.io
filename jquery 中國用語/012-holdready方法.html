@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script>
+        $.holdReady(true)//暫停ready的執行
+        $(document).ready(function(){
+            alert("gogo")
+        })
+    </script>
+</head>
+<body>
+    <button>btn</button>
+    <script>
+        var btn =document.getElementsByTagName("button")[0]
+        btn.addEventListener("click",function(){
+            $.holdReady(false)
+        })
+    </script>
+</body>
+</html>

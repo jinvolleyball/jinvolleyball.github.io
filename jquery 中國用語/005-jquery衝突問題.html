@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script>
+        var $ =123;
+        //其他框架也使用＄符號 會跟jquery發生衝突
+    </script>
+
+    <script>
+        //解決辦法1:釋放＄符號的使用權
+        jQuery.noConflict(); //之後用jQuery代替$
+        jQuery(function(e){
+            console.log(1)
+        })
+
+        //2.自定義訪問符號
+        var jj =jQuery.noConflict();//把$釋放改成jj
+        jj(function(){
+            console.log("jj")
+        })
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script>
+        var arr=[1,3,5,7,9];
+        var obj={
+            0:1,
+            1:3,
+            2:5,
+            3:7,
+            length:9
+        }
+        //原生ＪＳ
+        //parameter:vlaue,index,array
+        //map method:retuen new array
+        //map can't use in object
+        arr.map(function(value,index,array){
+            console.log("javascript",value,index,array)
+        })
+
+        //jquery
+        //map can use in object
+        $.map(arr,function(value,index){
+            console.log("jquery arr",index,value)
+        })
+        $.map(obj,function(value,index){
+            console.log("jquery obj",index,value)
+        })
+
+        //diffent:each and map
+        //each return origin object/array
+        //map can define return東西
+        var arrEach = $.each(arr,function(index,value){
+            return "index"+index //沒用？
+        })
+        var arrMap =$.map(arr,function(value,index){
+            return "index"+index
+        })
+        console.log("arrEach",arrEach)
+        console.log("arrMap",arrMap)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

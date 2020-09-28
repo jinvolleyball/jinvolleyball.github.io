@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script>
+        //定義一個函式
+        function AClass(){
+        };
+        //給函式一個屬性就是靜態方法
+        AClass.static=function(){
+            console.log("rocket")
+        }
+        //調用
+        AClass.static()
+
+
+
+        //實例方法
+        AClass.prototype.instanceMethod=function(){
+            console.log("繼承")
+        }
+        //調用
+        var test =new AClass;
+        test.instanceMethod()
+    </script>
+</head>
+<body>
+</body>
+</html>

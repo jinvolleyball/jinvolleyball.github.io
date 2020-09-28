@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery.js"></script>
+
+    <script>
+      // $() 帶表調用jquery的核心函數
+      //接收一個函數
+      $(function (e) {
+        console.log(123);
+
+        //接收一個字符串
+        //接收一個字符串選擇器
+        var $box1 = $(".box1");
+        var $box2 = $("#box2");
+        console.log($box1);
+        console.log($box2);
+        //接收一個代碼片段
+        var $p =$("<p>paragram</p>");
+        console.log($p);
+        $box1.append($p);
+        //接收一個ＤＯＭ元素
+        //會包裝成jquery對象返回給返回給我們
+        var span= document.getElementsByTagName("span");
+        console.log(span)
+        var $span =$("span");
+        console.log($span)
+      });
+    </script>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <div id="box2"></div>
+    <span>i'm span</span>
+  </body>
+</html>

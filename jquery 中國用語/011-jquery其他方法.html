@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script>
+        //trim method 去除字串兩端的空格
+        str="   123    "
+        console.log(str);
+        var res = $.trim(str)
+        console.log(res)
+        //iswindow method
+
+        //array
+        var arr= [1,2,3]
+        //array-like
+        var arrlike={0:1,1:3,2:5,length:4}
+        //物件
+        var obj={
+            name:"boyu",
+            age:23
+        }
+        //function
+        var fn=function(){}
+        //window物件
+        var w =window
+
+        console.log("arr",$.isWindow(arr))
+        console.log("window",$.isWindow(w))
+        console.log("isArr arr",$.isArray(arr))
+        console.log("isArr arrlike",$.isArray(arrlike))
+        console.log("isfunction jquery",$.isFunction($))
+        console.log("isobject obj",$.isPlainObject(obj))
+        console.log("isobject jquery",$.isPlainObject($))
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

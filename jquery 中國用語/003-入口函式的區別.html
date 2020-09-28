@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery.js"></script>
+
+
+    <!-- 
+        1.onload會等到圖片加載完才會執行
+        2.ready會等到ＤＯＭ加載完，但不會等到圖片加載後才執行
+     -->
+    <!-- 原生jquery -->
+    <!-- <script>
+      //通過原生的JS入口函示可以拿到DOM元素
+      window.onload = function (ev) {
+        var img = document.getElementsByTagName("img")[0];
+        console.log(img);
+        var width = window.getComputedStyle(img).width;
+        console.log("原生javascript:" + width);
+      };
+    </script> -->
+
+    <!-- jquery -->
+    <!-- <script>
+      $("document").ready(function (ev) {
+        var $img = $("img")[0];
+        console.log($img);
+        console.log("jquery:" + $img.width);
+      });
+    </script> -->
+
+    <script>
+        window.onload=function(){
+            alert("hello JS")
+        }
+        window.onload=function(){
+            alert("hello JS2")
+        }
+
+        $("document").ready(function(e){
+            alert("hello jquery")
+        })
+
+        $("document").ready(function(e){
+            alert("hello jquery2")
+        })
+    </script>
+
+
+  </head>
+  <body>
+    <img src="https://picsum.photos/300/300/?random=1" />
+  </body>
+
+</html>
