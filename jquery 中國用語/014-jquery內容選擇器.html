@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: #faa;
+            margin: 5px;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(function() {
+            // :contains(text) 包含指定content
+            var contains_div = $("div:contains('我是div')")
+            console.log("content:我是div", contains_div);
+            // :empty 沒有content跟子元素 
+            var $empty_div = $("div:empty")
+            console.log("empty", $empty_div);
+
+            // :has(selector) 包含指定元素
+            var $has_div = $("div:has('span')")
+            console.log("has_div", $has_div);
+
+            // :parent 有content或子元素
+            var $parent_div = $("div:parent");
+            console.log('parent', $parent_div);
+
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <div>我是div</div>
+    <div>他們我是div123</div>
+    <div><span></span></div>
+    <div>
+        <p></p>
+    </div>
+</body>
+
+</html>
