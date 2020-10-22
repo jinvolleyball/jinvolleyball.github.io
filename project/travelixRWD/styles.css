@@ -105,6 +105,10 @@ section{
     align-items:center;
     justify-content: center;
 }
+
+
+
+
 /* Header Style */
 .header{
     width: 100%;
@@ -116,7 +120,25 @@ section{
     left: 0;
     background-color: var(--purple-transparent);
     z-index: 999;
+    transition: .5s;
 }
+.header.active{
+    background-color:var(--purple-solid);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Header Style -nav */
 .nav{
@@ -179,7 +201,24 @@ section{
     padding: 1rem;
 }
 
-/* hero section style */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* hero section style (banner)*/
  .hero{
      width: 100%;
      height: 100vh;
@@ -219,6 +258,20 @@ section{
  }
 
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* booking section style */
 .booking{
     background: var(--gradient-color);
@@ -250,6 +303,22 @@ section{
 ::placeholder{
     color: inherit;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Featured hotels section */
 
 .featured-hotels{
@@ -297,6 +366,20 @@ section{
 .rating{
     color: var(--yellow-solid);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* special section style */
 .offer{
     background:linear-gradient(to right,rgba(250,158,44,.8),rgba(143,80,251,.8)),
@@ -326,6 +409,24 @@ section{
     color: #a5a5a5;
     margin-bottom: 2.5rem;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Room section style */
  .rooms{
      background-color: #f2f6f9;
@@ -334,12 +435,276 @@ section{
      position: relative;
      height: 25rem;
  }
- .image-wrap::before{
+ .image-wrap::after{
      content: "";
      top: 0;
      left: 0;
      position: absolute;
      width: 100%;
-     height: 0%;
+     height: 100%;
      background: var(--purple-transparent-alt);
  }
+ .room-image{
+     height: 100%;
+     width: 100%;
+     object-fit: cover;
+ }
+ .room-name{
+      font-size: 2.6rem;
+      background: var(--yellow-solid);
+      color: #fff;
+      padding: .5rem 2rem;
+      position: absolute;
+      left: 0;
+      bottom: 2.5rem;
+      z-index: 10;
+ }
+ .room-price{
+     font-size: 3.5rem;
+     display: inline-block;
+     font-weight: bold;
+     color: var(--yellow-solid);
+ }
+ .per-night{
+     font-weight: 100;
+     font-size: 1.4rem;
+     color: var(--dark-color);
+ }
+ .rooms-btn{
+     color: var(--dark-color);
+     padding: 0;
+     transition: color .5s;
+ }
+ .rooms-btn:hover{
+     color: var(--yellow-solid);
+ }
+
+
+
+
+
+
+
+
+
+ /* contact section */
+ .contact-content{
+     display: flex;
+     justify-content: center ;
+ }
+ .traveler-wrap{
+     display: none;
+ }
+ .contact-form{
+     width: 100%;
+     padding: 2.5rem;
+     background: var(--gradient-color);
+ }
+ .contact-form .input{
+     display: block;
+     background-color: transparent;
+     border-bottom: 2px solid #fff;
+     color: #fff;
+     font-weight: normal;
+     padding-left: 0;
+ }
+ .bar{
+     display: block;
+     position: relative;
+ }
+ .bar::after{
+     content: "";
+     position: absolute;
+     width: 100%;
+     height: 3px;
+     bottom: 0;
+     left: 0;
+     background-color: var(--purple-light);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .5s;
+ }
+ .contact-form .input:focus+.bar::after{
+     transform: scaleX(1);
+ }
+
+
+
+
+
+
+ /* footer */
+ .footer{
+     padding: 5rem 0;
+     background-color: var(--purple-solid);
+     color: #fff;
+ }
+ .footer-content-brand{
+     margin-bottom: 5rem;
+ }
+ .footer .paragraph{
+     color: inherit;
+ }
+ .footer-heading{
+     margin-bottom: 2.5rem;
+     text-transform:uppercase
+ }
+ .social-media{
+     display: flex;
+ }
+ .sm-link{
+     width: 4rem;
+     height: 4rem;
+     border: 2px solid var(--yellow-solid);
+     border-radius: 50%;
+     display: flex;
+     margin-right: 1rem;
+     transition: background-color .5s;
+ }
+ .sm-link:hover{
+     background-color: var(--yellow-solid);
+     color: var(--purple-solid);
+ }
+ .sm-link i{
+     margin: auto;
+ }
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ /* Media queries */
+@media screen and (min-width:768px){
+    /* header */
+    .header{
+        height: 10rem;   
+    }
+    .header.active{
+        height: 6rem;
+    }
+    /* hero section (banner) */
+    .title{
+        font-size: 8rem;
+    }
+    /* contact section */
+    .contact-content{
+        justify-content: space-between;
+    }
+    .traveler-wrap{
+        display: block;
+        /* flex:grow  shink basis(fixed width)*/
+        flex: 0 0 45%;
+    }
+    .traveler-wrap img{
+        width: 100%;
+    }
+    .contact-form{
+        flex: 0 0 50%;
+        align-self: flex-start;
+    }
+    .input-group-wrap{
+        display: flex;
+    }
+    .input-group-wrap .input-group{
+        width: 50%;
+    }
+    .input-group-wrap .input-group:first-child{
+        margin-right: 2rem;
+    }
+    /* footer */
+    .footer{
+        overflow: hidden;
+    }
+    .footer-content{
+        display: flex;
+        justify-content: space-between;
+    }
+    .footer-content-brand{
+        margin-bottom: 0;
+        flex: 0 0 60%;
+    }
+    .footer .paragraph{
+        margin-top: 2.5rem;
+    }
+    .footer-heading{
+        margin-bottom: 5rem;
+    }
+    .social-media{
+        flex: 0 0 40%;
+        /* margin-left: 2.5rem; */
+    }
+}
+@media screen and (min-width:1000px){
+    section:not(.booking){
+        padding: 10rem 0;
+    }
+    /* header */
+    .hamburger-menu{
+        display: none;
+    }
+    .nav-list{
+        position: initial;
+        width: initial;
+        height: initial;
+        transform: scaleX(1);
+        opacity: 1;
+        background: transparent;
+        flex-direction: row;
+        justify-content: initial;
+    }
+    .nav-items:not(:last-child){
+        margin-right: 3rem;
+        margin-bottom: 0;
+    }
+    .nav-link{
+        font-size: 1.3rem;
+        font-weight: normal;
+        transition: .5s;
+    }
+    .nav-link:hover{
+        color: var(--yellow-solid);
+    }
+    /* banner */
+    .title{
+        font-size: 12rem;
+    }
+    .subtitle{
+        font-size: 4.6rem;
+    }
+    /* booking */
+    .book-form{
+        display: flex;
+        justify-content: space-between;
+    }
+    .input-group{
+        margin-bottom: 0;
+    }
+    .input-group:first-child{
+        flex: 0 0 20%;
+    }
+    .input,.options{
+        min-width: 10rem;
+    }
+    /* room */
+    .rooms-grids{
+        grid-template-columns: repeat(auto-fit,minmax(40rem,1fr));
+    }
+    .featured-rooms{
+       flex-direction: row; 
+       align-items: flex-start;
+    }
+    .image-wrap{
+        flex: 0 0 50%;
+    }
+    .room-info-wrap{
+        margin-left: 1.5rem;
+    }
+}
