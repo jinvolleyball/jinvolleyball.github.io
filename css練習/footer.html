@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      body{
+          background: #000;
+      }
+      .main-footer {
+        padding: 150px 0 0;
+        background: linear-gradient(-20deg, #3f5494, #08c7a5);
+      }
+      .main-footer .container {
+        display: flex;
+        margin: auto;
+        width: 100%;
+      }
+
+      .footer-item {
+        width: 0;
+        flex-grow: 1;
+        margin: 0 20px;
+      }
+      .footer-item h4{
+          font-size: 24px;
+          border-bottom:1px dotted #fff;
+          color: #fff;
+          margin-bottom: .5em;
+          padding-bottom: .5em;
+      }
+      .footer-item nav a:hover{
+          color: #fa0;
+      }
+      .footer-item nav{
+          display: flex;
+          flex-direction: column;
+      }
+      .footer-item nav a{
+          color: #fff;
+          text-decoration: none;
+          line-height: 1.4;
+          padding: 10px 0;
+      }
+
+      /* 訂閱 */
+      .footer-sub{
+          display: flex;
+          flex-direction: column;
+          
+      }
+      .footer-sub form{
+        display: flex;
+        width: 100%;
+        margin: auto 0;
+
+      }
+      .footer-sub form input{
+          border: none;
+          padding: 5px 10px;
+      }
+      .footer-item input[type="text"]{
+        width: 0;
+        flex-grow: 1;
+      }
+      .footer-item input[type="submit"]{
+        background-color:#3e5293;
+        color:#70f6df;
+
+
+      }
+      .copyright {
+        margin: 150px 0 0;
+        text-align: center;
+        padding: 10px 0;
+        background: #3e5293;
+        width: 100%;
+        color: #70f6df;
+      }
+    </style>
+  </head>
+  <body>
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-item">
+          <h4>關於</h4>
+          <nav>
+            <a href="#"><i class="fa fa-angle-right"></i>test</a>
+            <a href="#"><i class="fa fa-angle-right"></i>test</a>
+            <a href="#"><i class="fa fa-angle-right"></i>test</a>
+            <a href="#"><i class="fa fa-angle-right"></i>test</a>
+          </nav>
+        </div>
+        <div class="footer-item">
+          <h4>聯絡方式</h4>
+          <nav>
+            <a href="#"><i class="fa fa-angle-right"></i>test</a>
+            <a href="#"><i class="fa fa-angle-right"></i>test</a>
+            <a href="#"><i class="fa fa-angle-right"></i>test</a>
+            <a href="#"><i class="fa fa-angle-right"></i>test</a>
+          </nav>
+        </div>
+        <div class="footer-item">
+          <h4>小姐</h4>
+          <nav>
+            <a href="#"><i class="fa fa-angle-right"></i>test</a>
+            <a href="#"><i class="fa fa-angle-right"></i>test</a>
+            <a href="#"><i class="fa fa-angle-right"></i>test</a>
+            <a href="#"><i class="fa fa-angle-right"></i>test</a>
+          </nav>
+        </div>
+        <div class="footer-item footer-sub">
+          <h4>訂閱</h4>
+          <form action="">
+              <input type="text">
+              <input type="submit" value="訂閱">
+          </form>
+        </div>
+      </div>
+      <div class="copyright">copyright &copy; 2020/09/01 學習切版</div>
+    </footer>
+  </body>
+</html>

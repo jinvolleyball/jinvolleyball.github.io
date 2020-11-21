@@ -1,0 +1,115 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: cornflowerblue;
+    flex-direction: column;
+    padding: 40px;
+}
+h4{
+    margin-bottom: 30px;
+}
+.tabsbox{
+    display: flex;
+    flex-direction: column;
+    background: cornsilk;
+    border: 1px solid #000;
+    width: 80%;
+    height: 50%;
+}
+
+.firstnav{
+    display: flex;
+    justify-content: space-between;
+}
+ul{
+    display: flex;
+}
+li{
+    line-height: 50px;
+    padding: 10px;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    cursor: pointer;
+    position: relative;
+}
+li.liactive{
+    border-bottom: 2px solid cornsilk;
+    cursor: initial;
+}
+.iconfont{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ccc;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+.iconfont::after,
+.iconfont::before{
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 2px;
+    background: #fff;
+    margin:auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.iconfont::before{
+    transform: rotate(45deg);  
+}
+.iconfont::after{
+    transform: rotate(-45deg);  
+}
+
+.tabadd{
+    flex-grow: 1;
+    border-bottom: 1px solid #000;
+    position: relative;
+}
+.tabadd span{
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    line-height: 40px;
+    width: 40px;
+    text-align: center;
+    border-radius: 3px;
+    border: 1px solid #000;
+    transition: .5s;
+    cursor: pointer;
+}
+.tabadd span:hover{
+    background-color: #000;
+    color: cornsilk;
+}
+.tabscon{
+    padding: 10px;
+}
+section{
+    display: none;
+}
+.conactive{
+    display: block;
+}
+
+.liactive span input,
+.conactive input{
+    width: auto;
+    size: 100%;
+}

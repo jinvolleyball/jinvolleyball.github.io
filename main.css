@@ -1,0 +1,46 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  height: 100%;
+  max-width: 1280px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: lemonchiffon;
+  height: 100vh;
+  position: relative;
+}
+
+.start {
+  border: 2px solid #000;
+  border-radius: 3px;
+  width: 60%;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  padding: 20px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.start .photo {
+  height: 100px;
+  width: 200px;
+}
+
+.start .photo_img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+/*# sourceMappingURL=main.css.map */

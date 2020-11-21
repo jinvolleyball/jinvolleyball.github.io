@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            background: blanchedalmond;
+        }
+        .wrap{
+            padding: 10px 0;
+            background: #888;
+        }
+        .wrap .breadcrump{
+            width: 90%;
+            margin:auto;
+            display: flex;
+        }
+        .breadcrump li {
+            padding: 0 20px;
+            position: relative;
+        }
+        .breadcrump li:last-child a{
+            color: #000;
+        }
+        .breadcrump li+li{
+            padding-left: 0;
+        }
+        .breadcrump li+li:before{
+            content: ">>";
+            color:#fff;
+            margin-right: 20px;
+        }
+        .breadcrump a{
+            text-decoration:none;
+            color:#fff;
+        }
+        .breadcrump li :hover{
+            color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ol class="breadcrump">
+            <li><a href="#">麵包</a></li>
+            <li><a href="#">麵包</a></li>
+            <li><a href="#">麵包</a></li>
+            <li><a href="#">麵包</a></li>
+            <li><a href="#">麵包</a></li>
+            <li><a href="#">麵包</a></li>
+        </ol>
+    </div>
+</body>
+</html>

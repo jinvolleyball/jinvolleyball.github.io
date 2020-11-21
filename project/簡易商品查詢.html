@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        /* border: 1px solid #000; */
+        width: 80%;
+        left: 0;
+        right: 0;
+        margin: 20px auto;
+        border-collapse: collapse;
+        text-align: center;
+      }
+      thead {
+        font-weight: bold;
+      }
+      td {
+        border: 1px solid #000;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search">
+      依價:<input type="text" class="start" />-<input type="text" class="end" />
+      <button class="search-price">search</button>
+      依照名稱：<input type="text" class="product" />
+      <button class="search-product">search</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <td>id</td>
+          <td>name</td>
+          <td>price</td>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      let data = [
+        {
+          id: 1,
+          pname: "p1",
+          price: 100,
+        },
+        {
+          id: 2,
+          pname: "p2",
+          price: 200,
+        },
+        {
+          id: 3,
+          pname: "p3",
+          price: 300,
+        },
+        {
+          id: 4,
+          pname: "p4",
+          price: 400,
+        },
+      ];
+      let tbody = document.querySelector("tbody");
+      let search_price = document.querySelector(".search-price");
+      let start = document.querySelector(".start");
+      let end = document.querySelector(".end");
+      let search_product=document.querySelector(".search-product");
+      let product=document.querySelector(".product")
+      //初始頁面先列出資料
+      setData(data)
+      //刷出資料
+      function setData(mydata) {
+        tbody.innerHTML="";
+        mydata.forEach(function (value) {
+          let tr = document.createElement("tr");
+          tr.innerHTML =
+            "<td>" +
+            value.id +
+            "</td>" +
+            "<td>" +
+            value.pname +
+            "</td>" +
+            "<td>" +
+            value.price +
+            "</td>";
+          // tr.innerHTML="123"
+          tbody.appendChild(tr);
+        });
+      }
+      //價格查詢
+      search_price.addEventListener("click", function () {
+        let ss=start.value===""? 0:start.value
+        let ee=end.value===""? 99999:end.value
+        let newData = data.filter(function (value) {
+          return ss <= value.price && value.price <= ee;
+        });
+        setData(newData)
+      });
+      //商品查詢
+      search_product.addEventListener("click",function(){
+        let arr=[]
+        if(product.value===""){return}
+        data.some(function(value){
+          if (value.pname===product.value){
+            arr.push(value)
+            return true
+          }
+        })
+        setData(arr)
+      })
+    </script>
+  </body>
+</html>
