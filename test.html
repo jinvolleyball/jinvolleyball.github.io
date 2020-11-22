@@ -6,29 +6,25 @@
     <title>Document</title>
 </head>
 <body>
+    <button>click</button>
+    <button>click</button>
+    <button>click</button>
+    <button>click</button>
+    <button>click</button>
+    <button>click</button>
+    <button>click</button>
+    <button>click</button>
+    <button>click</button>
     <script>
-        obj={
-            name:"boyu",
-            age:18,
-            gender:"male"
-        }
-        Object.defineProperty(obj,"age",{
-            value:20
-        })
-        Object.defineProperty(obj,"name",{
-            writable:false
-        })
-        Object.defineProperty(obj,"ggininder",{
-            value:"19cm",
-            enumerable:false,
-            configurable:false
-        })
-        console.log(obj);
-        console.log(Object.keys(obj));
-        
-        
-        
-        
+        let btns =window.document.querySelectorAll("button");
+        for(let i = 0; i<btns.length;i++){
+        btns[i].addEventListener("click",function(){
+            this.disabled=true;
+            setTimeout(function(){
+                this.disabled=false;
+            }.bind(this),3000)
+        })}
+
     </script>
 </body>
 </html>

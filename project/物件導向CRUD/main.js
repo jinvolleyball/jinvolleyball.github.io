@@ -1,8 +1,6 @@
-var that;
 class Tab {
   constructor(id) {
-    //獲取元素
-    that = this;
+    //獲取#tab元素
     this.main = document.querySelector(id);
     // this.lis = this.main.querySelectorAll("li");
     // this.sections = this.main.querySelectorAll("section");
@@ -15,7 +13,7 @@ class Tab {
   //init
   init() {
     this.updateNode();
-    this.add.onclick = this.addTab;
+    this.add.onclick = this.addTab.bind(this.add,this);    
     // for (let i = 0; i < this.lis.length; i++) {
     //   this.lis[i].index = i;
     //   this.lis[i].onclick = this.toggleTab;
@@ -31,20 +29,20 @@ class Tab {
     this.spans = this.main.querySelectorAll(".firstnav li span:first-child");
     for (let i = 0; i < this.lis.length; i++) {
       this.lis[i].index = i;
-      this.lis[i].onclick = this.toggleTab;
-      this.remove[i].onclick = this.removeTab;
+      this.lis[i].onclick = this.toggleTab.bind(this.lis[i],this);
+      this.remove[i].onclick = this.removeTab.bind(this.remove[i],this);
       this.spans[i].ondblclick = this.editTab;
       this.sections[i].ondblclick=this.editTab
     }
   }
   //toggleTab
-  toggleTab(e) {
+  toggleTab(that) {
     that.clearClass();
     this.className = "liactive";
     that.sections[this.index].className = "conactive";
   }
   //add
-  addTab() {
+  addTab(that) {
     that.clearClass();
     //創建li跟section元素
     var li =
@@ -57,7 +55,7 @@ class Tab {
     that.updateNode();
   }
   //remove
-  removeTab(e) {
+  removeTab(that,e) {
     //on事件預設是在冒泡事件發生
     //要阻止li的事件發生
     e.stopPropagation();
