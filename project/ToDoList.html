@@ -10,8 +10,8 @@
         padding: 5px;
         list-style: none;
       }
-      body{
-          background-color: blanchedalmond;
+      body {
+        background-color: blanchedalmond;
       }
       h1 {
         text-align: left;
@@ -26,8 +26,8 @@
         width: 100%;
         border-radius: 50%;
       }
-      li button{
-          margin-right: 10px;
+      li button {
+        margin-right: 10px;
       }
       .right {
         width: 100%;
@@ -51,13 +51,16 @@
       var btn = document.querySelector("#btn");
       var result = document.querySelector("#result");
       var todo = JSON.parse(localStorage.getItem("listData")) || [];
+      let input =document.querySelector('#input');
       btn.addEventListener("click", add);
       result.addEventListener("click", del);
+      input.addEventListener('keydown',add)
 
       update(todo);
 
       //add (update array,localstorage)
       function add(e) {
+        if (e.keyCode!=13){return}
         e.preventDefault();
         var input = document.querySelector("#input").value;
         if (input == "") {
@@ -70,17 +73,17 @@
         todo.push(input);
         update(todo);
         document.querySelector("#input").value = "";
-        localStorage.setItem("listData",JSON.stringify(todo))
+        localStorage.setItem("listData", JSON.stringify(todo));
       }
       //del
       function del(e) {
-          e.preventDefault();
+        e.preventDefault();
         if (e.target.nodeName != "BUTTON") {
           return;
         }
-         var num = e.target.dataset.num;
+        var num = e.target.dataset.num;
         todo.splice(num, 1);
-        localStorage.setItem("listData",JSON.stringify(todo));
+        localStorage.setItem("listData", JSON.stringify(todo));
         update(todo);
       }
 
